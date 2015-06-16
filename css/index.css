@@ -5,17 +5,19 @@ body {
 }
 
 .divlink {
-	font-size: 0;
-	width: 100%;
-	height: 100%;
-	display: block;
+    font-size: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
 }
-
 /* index.css */
 
 .header {
     height: 92px;
     background-color: #ffd900;
+    position: fixed;
+    width: 100%;
 }
 
 .header>div {
@@ -32,9 +34,9 @@ body {
 }
 
 .header>div>.left>.logo {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_logo.png);
-	width:200px;
-	height: 92px;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_logo.png);
+    width: 200px;
+    height: 92px;
 }
 
 .header>div>.center {
@@ -49,44 +51,44 @@ body {
 }
 
 .header>div>.center>.menu>a {
-	vertical-align: bottom;
-  	text-decoration: none;
+    vertical-align: bottom;
+    text-decoration: none;
 }
 
 .header>div>.right {
     float: right;
     z-index: 1;
-  	position: relative;
+    position: relative;
 }
 
 .header>div>.right>.up {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .header>div>.right>.up>.fb {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_fb.png);
-	width: 41px;
-	height: 46px;
-	float: right;
-	margin-top: 1px;
-  	margin-right: 1px;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_fb.png);
+    width: 41px;
+    height: 46px;
+    float: right;
+    margin-top: 1px;
+    margin-right: 1px;
 }
 
 .header>div>.right>.up>.fb:hover {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_fb_c.png);
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_fb_c.png);
 }
 
 .header>div>.right>.up>.ig {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_ig.png);
-	width:43px;
-	height: 46px;
-	float: right;
-	margin-top: 1px;
-  	margin-right: 2px;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_ig.png);
+    width: 43px;
+    height: 46px;
+    float: right;
+    margin-top: 1px;
+    margin-right: 2px;
 }
 
 .header>div>.right>.up>.ig:hover {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_ig_c.png);
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_ig_c.png);
 }
 
 #formSearch {
@@ -94,7 +96,7 @@ body {
 }
 
 #btnSearch {
-	width: 22px;
+    width: 22px;
     height: 22px;
     border: 2px solid white;
     background-color: transparent;
@@ -106,67 +108,376 @@ body {
 }
 
 #edtSearch {
-  border: 2px solid white;
-  background-color: transparent;
-  width: 101px;
-  height: 16px;
-  position: absolute;
-  top: 12px;
-  right: 119px;
+    border: 2px solid white;
+    background-color: transparent;
+    width: 101px;
+    height: 16px;
+    position: absolute;
+    top: 12px;
+    right: 119px;
 }
 
 .header>div>.right>.down>.tel {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_10.png);
-	width:52px;
-	height: 35px;
-	float: right;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_10.png);
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 45px;
+    float: right;
+}
+
+.header>div>.right>.down>.tel>.telbox {
+    display: none;
+    width: 171px;
+    height: 259px;
+    background-color: white;
+    margin-top: 45px;
+    margin-left: -58px;
+    position: absolute;
+}
+
+.header>div>.right>.down>.tel>.telbox>.lab {
+    width: 159px;
+    background-color: black;
+    margin: 3px 6px;
+    height: 28px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 微軟正黑體;
+    line-height: 28px;
+    color: white;
+    font-weight: bold;
+}
+
+.header>div>.right>.down>.tel>.telbox>.box {
+    height: 43px;
+    border-bottom: 2px dotted #dcdcdc;
+}
+
+.header>div>.right>.down>.tel>.telbox>.box.b1>div {
+    text-align: center;
+    font-size: 12px;
+    padding-top: 5px;
+    font-family: arial;
+}
+
+.header>div>.right>.down>.tel>.telbox>.box.b2 {
+    height: 34px;
+}
+
+.header>div>.right>.down>.tel>.telbox>.box.b2>div {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 6px;
+    font-family: arial;
+}
+
+.header>div>.right>.down>.tel>.telbox>.box.b3 {
+    height: 33px;
+}
+
+.header>div>.right>.down>.tel>.telbox>.box.b3>div {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 8px;
+    font-family: arial;
+}
+
+.header>div>.right>.down>.tel>.telbox>.btn {
+    width: 159px;
+    background-color: #ffd900;
+    margin: 6px 6px;
+    height: 28px;
+}
+
+.header>div>.right>.down>.tel>.telbox>.btn>.divlink {
+    text-align: center;
+    font-size: 14px;
+    font-family: 微軟正黑體;
+    line-height: 28px;
+    color: black;
+    font-weight: bold;
 }
 
 .header>div>.right>.down>.tel:hover {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_10_c.png);
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_10_c.png);
+}
+
+.header>div>.right>.down>.tel:hover>.telbox {
+    display: block;
 }
 
 .header>div>.right>.down>.usr {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_09.png);
-	width: 48px;
-	height: 35px;
-	float: right;
-	margin-right: -9px;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_09.png);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 45px;
+    float: right;
+    margin-right: -9px;
+}
+
+.header>div>.right>.down>.usr>.usrbox {
+    display: none;
+    width: 182px;
+    height: 189px;
+    background-color: white;
+    margin-top: 45px;
+    margin-left: -65px;
+    position: absolute;
+}
+
+.header>div>.right>.down>.usr>.usrbox>.lab {
+    font-size: 12px;
+    text-align: center;
+    font-family: arial;
+    padding-top: 11px;
+    letter-spacing: 2px;
+}
+
+.header>div>.right>.down>.usr>.usrbox>.btn {
+    width: 166px;
+    background-color: #ffd900;
+    margin: 4px 8px;
+    height: 28px;
+}
+
+.header>div>.right>.down>.usr>.usrbox>.btn>.divlink {
+    text-align: center;
+    font-size: 14px;
+    font-family: 微軟正黑體;
+    line-height: 28px;
+    color: black;
+    font-weight: bold;
+}
+
+.header>div>.right>.down>.usr>.usrbox>.sp {
+    font-size: 0;
+    border-bottom: 2px dotted #dcdcdc;
 }
 
 .header>div>.right>.down>.usr:hover {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_09_c.png);	
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_09_c.png);
+}
+
+.header>div>.right>.down>.usr:hover>.usrbox {
+    display: block;
 }
 
 .header>div>.right>.down>.bag {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_08.png);
-	width: 55px;
-	height: 35px;
-	float: right;
-	margin-right: -8px;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_08.png);
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 45px;
+    float: right;
+    margin-right: -8px;
+}
+
+.header>div>.right>.down>.bag>span {
+    width: 59px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    line-height: 31px;
+    font-size: 14px;
+    font-family: arial;
+    color: white;
+}
+
+.header>div>.right>.down>.bag>.bagbox {
+    display: none;
+    width: 425px;
+    min-height: 134px;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: -327px;
+    position: absolute;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.tablehead {
+    width: 423px;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.tablehead>thead>tr>td {
+    background-color: black;
+    color: white;
+    height: 24px;
+    font-size: 12px;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.tablehead>thead>tr>td.first {
+    padding-left: 44px;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.tablebody {
+    margin-top: -1px;
+    width: 421px;
+    margin-left: 2px;
+    border-bottom: 2px dotted #dcdcdc;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.tablebody td {
+    border-right: 1px solid #dcdcdc;
+    padding: 3px 3px;
+    font-size: 12px;
+    font-family: arial, 微軟正黑體;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.tablebody td.end {
+    border-right: 0;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.totalmoney {
+    margin-top: 7px;
+    font-size: 14px;
+    margin-left: 294px;
+    font-family: 微軟正黑體;
+    color: red;
+    font-weight: bold;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.totalmoney>span {
+    width: 65px;
+    display: inline-block;
+    text-align: center;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.btn {
+    width: 120px;
+    background-color: #ffd900;
+    margin: 11px 296px;
+    height: 28px;
+}
+
+.header>div>.right>.down>.bag>.bagbox>.btn>.divlink {
+    text-align: center;
+    font-size: 14px;
+    font-family: 微軟正黑體;
+    line-height: 28px;
+    color: black;
+    font-weight: bold;
 }
 
 .header>div>.right>.down>.bag:hover {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_08_c.png);
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_08_c.png);
+}
+
+.header>div>.right>.down>.bag:hover>span {
+    visibility: hidden;
+}
+
+.header>div>.right>.down>.bag:hover>.bagbox {
+    display: block;
 }
 
 .header>div>.right>.down>.fav {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_07.png);
-	width: 53px;
-	height: 35px;
-	float: right;
-	margin-right: -8px;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_07.png);
+    background-repeat: no-repeat;
+    width: 53px;
+    height: 45px;
+    float: right;
+    margin-right: -8px;
+}
+
+.header>div>.right>.down>.fav>span {
+    width: 51px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    line-height: 31px;
+    font-size: 14px;
+    font-family: arial;
+    color: white;
+}
+
+.header>div>.right>.down>.fav>.favbox {
+    display: none;
+    width: 425px;
+    min-height: 134px;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: -327px;
+    position: absolute;
+}
+
+.header>div>.right>.down>.fav>.favbox>.tablehead {
+    width: 423px;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.header>div>.right>.down>.fav>.favbox>.tablehead>thead>tr>td {
+    background-color: black;
+    color: white;
+    height: 24px;
+    font-size: 12px;
+}
+
+.header>div>.right>.down>.fav>.favbox>.tablehead>thead>tr>td.first {
+    padding-left: 44px;
+}
+
+.header>div>.right>.down>.fav>.favbox>.tablebody {
+    margin-top: -1px;
+    width: 421px;
+    margin-left: 2px;
+    border-bottom: 2px dotted #dcdcdc;
+}
+
+.header>div>.right>.down>.fav>.favbox>.tablebody td {
+    border-right: 1px solid #dcdcdc;
+    padding: 3px 3px;
+    font-size: 12px;
+    font-family: arial, 微軟正黑體;
+}
+
+.header>div>.right>.down>.fav>.favbox>.tablebody td.end {
+    border-right: 0;
+}
+
+.header>div>.right>.down>.fav>.favbox>.totalmoney {
+    margin-top: 7px;
+    font-size: 14px;
+    margin-left: 294px;
+    font-family: 微軟正黑體;
+    color: red;
+    font-weight: bold;
+}
+
+.header>div>.right>.down>.fav>.favbox>.btn {
+    width: 120px;
+    background-color: #ffd900;
+    margin: 11px 296px;
+    height: 28px;
+}
+
+.header>div>.right>.down>.fav>.favbox>.btn>.divlink {
+    text-align: center;
+    font-size: 14px;
+    font-family: 微軟正黑體;
+    line-height: 28px;
+    color: black;
+    font-weight: bold;
 }
 
 .header>div>.right>.down>.fav:hover {
-	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_07_c.png);
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_07_c.png);
+}
+
+.header>div>.right>.down>.fav:hover>span {
+    visibility: hidden;
+}
+
+.header>div>.right>.down>.fav:hover>.favbox {
+    display: block;
 }
 
 
 
-/* temp */
-/*
-.header>div {
-    background-image: url(../images/temp.png);
+
+
+/* test */
+body {
+	background-color: pink;
+	height: 2000px;
 }
-*/
