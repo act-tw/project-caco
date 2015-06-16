@@ -393,7 +393,7 @@ body {
 .header>div>.right>.down>.fav>.favbox {
     display: none;
     width: 425px;
-    min-height: 134px;
+    min-height: 108px;
     background-color: white;
     margin-top: 10px;
     margin-left: -327px;
