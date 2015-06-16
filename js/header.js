@@ -66,7 +66,6 @@ function initWishList() {
         }
         $(".header>div>.right>.down>.fav>.favbox>.tablebody>tbody").html(html);
         $(".header>div>.right>.down>.fav>span").text(count);
-        $(".header>div>.right>.down>.fav>.favbox>.totalmoney>span").text(total);
     }
     if (isLocal) {
         getdata(wishlist);
@@ -105,4 +104,15 @@ $(function() {
         $this.attr("src", $this.attr("hover"));
         $this.attr("hover", src);
     }); //change menu image
+
+
+
+
+    $(".event").click(function() {
+        if ($(this).hasClass("close")) {
+            $(this).removeClass("close");
+        } else {
+            $(this).addClass("close");
+        }
+    });
 });

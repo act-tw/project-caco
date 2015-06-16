@@ -11,13 +11,14 @@ body {
     display: block;
     text-decoration: none;
 }
-/* index.css */
+/* header */
 
 .header {
     height: 92px;
     background-color: #ffd900;
     position: fixed;
     width: 100%;
+    z-index: 101;
 }
 
 .header>div {
@@ -470,6 +471,44 @@ body {
 
 .header>div>.right>.down>.fav:hover>.favbox {
     display: block;
+}
+
+/* event */
+.event {
+    position: relative;
+    z-index: 100;
+}
+
+.event>.open {
+    position: fixed;
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_event.png);
+    width: 76px;
+    height: 34px;
+    right: 0;
+    top: 139px;
+    cursor: pointer;
+    transition: right 1s;
+}
+
+.event.close>.open {
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_event_c.png);
+    right:190px;
+    transition: right 1s;
+}
+
+.event>.inbox {
+    position: fixed;
+    width: 0;
+    height: 500px;
+    right: 0;
+    top: 92px;
+    background-color: white;
+    transition: width 1s;
+}
+
+.event.close>.inbox {
+    width:190px;
+    transition: width 1s;
 }
 
 
