@@ -41,7 +41,6 @@ function initShoppingCart() {
 }
 function initWishList() {
 	var wishlist = [{"tidno":218052,"MerNo1":"BSS022","MerName":"ELMO背心","Color":"02米白","Size":"S","Price":290,"PhotoSmPath":"http://www.caco.url.tw/caco/PD/BSS022_260_1.jpg","DetailUrl":"itemDetail.aspx?mNo1=BSS022","merOrderNum":0,"ColorPhotoPath":"http://www.caco.url.tw/caco/COLOR/BSS02202.jpg"},{"tidno":218053,"MerNo1":"VC0022","MerName":"水洗單寧後背包","Color":"78深藍","Size":"F","Price":680,"PhotoSmPath":"http://www.caco.url.tw/caco/PD/VC0022_260_1.jpg","DetailUrl":"itemDetail.aspx?mNo1=VC0022","merOrderNum":0,"ColorPhotoPath":"http://www.caco.url.tw/caco/COLOR/VC002278.jpg"},{"tidno":218054,"MerNo1":"BCA050","MerName":"刷色抓破男朋友褲","Color":"70淺藍","Size":"L","Price":880,"PhotoSmPath":"http://www.caco.url.tw/caco/PD/BCA050_260_1.jpg","DetailUrl":"itemDetail.aspx?mNo1=BCA050","merOrderNum":0,"ColorPhotoPath":"http://www.caco.url.tw/caco/COLOR/BCA05070.jpg"},{"tidno":218055,"MerNo1":"BCA150","MerName":"波西米亞連身褲","Color":"74丈青","Size":"M","Price":480,"PhotoSmPath":"http://www.caco.url.tw/caco/PD/BCA150_260_1.jpg","DetailUrl":"itemDetail.aspx?mNo1=BCA150","merOrderNum":0,"ColorPhotoPath":"http://www.caco.url.tw/caco/COLOR/BCA15074.jpg"}];
-    wishlist=[];
     function getdata(wishlist) {
         var html = "";
         var count = 0;

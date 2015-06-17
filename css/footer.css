@@ -1,0 +1,244 @@
+/* common */
+
+body {
+    margin: 0;
+}
+
+.divlink {
+    font-size: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+/* overlayer */
+
+.overlayer {
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
+}
+
+.overlayer.close {
+    display: block;
+}
+
+.overlayer.alert {
+	z-index: 107;
+}
+
+.overlayer.alert>div {
+	background-color: white;
+	width: 378px;
+	height: 173px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -190px;
+	margin-top: -87px;
+	border: 1px solid black;
+}
+
+.overlayer.alert>div>.title {
+	font-size: 15px;
+  	font-family: 微軟正黑體;
+  	text-align: center;
+  	margin-top: 38px;
+}
+
+.overlayer.alert>div>.message {
+	text-align: center;
+  	font-size: 14px;
+  	font-family: 微軟正黑體;
+  	margin-top: 10px;
+}
+
+.overlayer.alert>div>.btn {
+	border: 1px solid black;
+  	width: 128px;
+  	text-align: center;
+  	margin: 30px auto 0 auto;
+  	height: 19px;
+  	font-family: arial;
+  	font-size: 14px;
+  	line-height: 19px;
+}
+
+/* footer */
+
+.footer {
+	width: 100%;
+	height: 100px;
+	background-color: #ffd900;
+}
+
+.footer>div {
+    max-width: 1255px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+.footer>div>.up {
+	overflow: hidden;
+}
+
+.footer>div>.up>.left {
+	position: absolute;
+}
+
+.footer>div>.up>.left>.lab {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_14.png);
+	width: 71px;
+	height: 27px;
+	font-size: 0;
+	margin-top: 19px;
+  	margin-left: 38px;
+  	float: left;
+}
+
+.footer>div>.up>.left>.epm {
+	float: left;
+	border: 1px solid;
+    margin-top: 19px;
+    margin-left: 5px;
+    width: 226px;
+    height: 23px;
+}
+
+.footer>div>.up>.left>.btn {
+	float: left;
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_16.png); 
+	width: 65px;
+	height: 27px;
+	font-size: 0;
+	margin-top: 19px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.footer>div>.up>.left>.btn:hover {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_16_c.png);
+}
+
+.footer>div>.up>.right {
+	overflow: hidden;
+	float: right;
+}
+
+.footer>div>.up>.right>div {
+	float: right;
+}
+
+.footer>div>.up>.right>.recruitment {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_22.png);
+	width: 129px;
+	height: 27px;
+	margin-right: 28px;
+  	margin-top: 19px;
+}
+
+.footer>div>.up>.right>.recruitment:hover {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_22_c.png);
+}
+
+.footer>div>.up>.right>.cooperation {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_21.png);
+	width: 126px;
+	height: 27px;
+  	margin-top: 19px;
+}
+
+.footer>div>.up>.right>.cooperation:hover {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_21_c.png);
+}
+
+.footer>div>.up>.right>.privacynotice {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_20.png);
+	width: 145px;
+	height: 27px;
+  	margin-top: 19px;
+}
+
+.footer>div>.up>.right>.privacynotice:hover {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_20_c.png);
+}
+
+.footer>div>.up>.right>.news {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_19.png);
+	width: 89px;
+	height: 27px;
+  	margin-top: 19px;
+}
+
+.footer>div>.up>.right>.news:hover {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_19_c.png);
+}
+
+.footer>div>.up>.right>.aboutus {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_18.png);
+	width: 96px;
+	height: 27px;
+  	margin-top: 19px;
+}
+
+.footer>div>.up>.right>.aboutus:hover {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_18_c.png);
+}
+
+.footer>div>.up>.right>.faqs {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_17.png);
+	width: 85px;
+	height: 27px;
+  	margin-top: 19px;
+}
+
+.footer>div>.up>.right>.faqs:hover {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_17_c.png);
+}
+
+.footer>div>.down>.left {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_copyright.png);
+	width: 304px;
+	height: 23px;
+	margin-top: 31px;
+  	margin-left: 38px;
+  	float: left;
+}
+
+.footer>div>.down>.right {
+	background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_mobile.png);
+	width: 129px;
+	height: 23px;
+	float: right;
+	margin-top: 31px;
+  	margin-right: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* test */
+body {
+	background-color: pink;
+	
+}
+
+#container {
+    height: 2000px;
+}
+
+
