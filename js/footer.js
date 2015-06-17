@@ -1,3 +1,4 @@
+"use strict";
 $(function() {
     function isEmail(emailtoCheck) {
         var regExp = /^[^@^\s]+@[^\.@^\s]+(\.[^\.@^\s]+)+$/;
