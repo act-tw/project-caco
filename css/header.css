@@ -4,6 +4,10 @@ body {
     margin: 0;
 }
 
+#container {
+    padding-top: 92px;
+}
+
 .divlink {
     font-size: 0;
     width: 100%;
@@ -473,11 +477,34 @@ body {
     display: block;
 }
 
+/* overlayer */
+
+.overlayer {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    display: none;
+    transition: opacity .4s linear,display .4s linear;
+}
+
+.overlayer.close {
+    opacity: 0.5;
+    display: block;
+    transition: opacity .4s linear,display .4s linear;
+}
+
 /* event */
+
 .event {
     position: relative;
     z-index: 100;
 }
+
+
 
 .event>.open {
     position: fixed;
@@ -487,28 +514,48 @@ body {
     right: 0;
     top: 139px;
     cursor: pointer;
-    transition: right 1s;
+    transition: right .4s linear;
 }
 
 .event.close>.open {
     background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_event_c.png);
     right:190px;
-    transition: right 1s;
+    transition: right .4s linear;
 }
 
 .event>.inbox {
     position: fixed;
     width: 0;
-    height: 500px;
+    height: 100%;
     right: 0;
     top: 92px;
     background-color: white;
-    transition: width 1s;
+    transition: width .4s linear;
 }
 
 .event.close>.inbox {
     width:190px;
-    transition: width 1s;
+    transition: width .4s linear;
+}
+
+
+
+.event>.inbox>.lab {
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_23.png);
+    width: 150px;
+    height: 20px;
+    margin: 54px 20px 20px 20px;
+}
+
+.event>.inbox>.box {
+    width:190px;
+    height: 100%;
+}
+
+.event>.inbox>.box img {
+    margin-left: 20px;
+    margin-bottom: 41px;
+    width: 150px;
 }
 
 

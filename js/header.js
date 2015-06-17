@@ -8,7 +8,7 @@ function initShoppingCart() {
         var total = 0;
         try {
             if (cartlist[0].MerName) {
-                for (var i = 0; i < cartlist.length; i++) {
+                for (var i = 0, max = cartlist.length; i < max; i++) {
                     html += "<tr>";
                     html += "<td width=\"34\" class=\"end\" align=\"center\"><img src=\"" + cartlist[i].PhotoSmPath + "\" height=\"25\"></td>";
                     html += "<td>" + cartlist[i].MerName + "</td>";
@@ -47,7 +47,7 @@ function initWishList() {
         var count = 0;
         try {
             if (wishlist[0].MerName) {
-                for (var i = 0; i < wishlist.length; i++) {
+                for (var i = 0, max = wishlist.length; i < max; i++) {
                     html += "<tr>";
                     html += "<td width=\"34\" class=\"end\" align=\"center\"><img src=\"" + wishlist[i].PhotoSmPath + "\" height=\"25\"></td>";
                     html += "<td>" + wishlist[i].MerName + "</td>";
@@ -95,24 +95,70 @@ $(function() {
         }
     })(); //loginstatus
     (function() {
+        $(".menu").on("mouseenter mouseleave", "img[hover]", function() {
+            var $this = $(this),
+                src = $this.attr("src");
+            $this.attr("src", $this.attr("hover"));
+            $this.attr("hover", src);
+        }); //change menu image
+    })(); //change menu image    
+    (function() {
+        function setAdjustHeight() {
+            $(".event>.inbox").height($(window).height()-$(".header").height());
+            $(".event>.inbox>.box").height($(window).height()-$(".header").height()-$(".event>.inbox>.lab").outerHeight(true));
+            $(".event>.inbox>.box").mCustomScrollbar("update");
+        }
+        function setmCustomScrollbar() {
+            $(".event>.inbox").width(190);
+            $(".event>.inbox>.box").mCustomScrollbar({
+                autoDraggerLength: false,
+                mouseWheel: "auto",
+                scrollButtons: {
+                    enable: false
+                }
+            });
+            $(".event>.inbox").removeAttr("style");            
+        }
+        $(window).resize(function() {
+            setAdjustHeight();
+        });
+        $(".event").mouseenter(function() {
+            if (!$(this).hasClass("close")) {
+                $(this).add(".overlayer").addClass("close");
+
+            }
+        }).mouseleave(function() {
+            if ($(this).hasClass("close")) {
+                $(this).add(".overlayer").removeClass("close");
+            }
+        });
+        (function() {
+            var data = [{"uid":"0b82f6e0-5bcc-4339-8d63-1dcad621bc0c","image":"http://www.caco2.url.tw/caco/AC/images/15601-EVENT.gif","title":" ","thumb":null,"url":"http://goo.gl/MBp04e","enable":true,"sortnum":0},{"uid":"dc8066ce-0e56-4c1b-ac1e-aa20bb559e56","image":"http://www.caco2.url.tw/caco/AC/images/EVENT_70off_MAN.gif","title":"  ","thumb":null,"url":"http://goo.gl/nRsAfd","enable":true,"sortnum":6},{"uid":"d19061a7-6115-4c32-888c-2e07c3c48977","image":"http://www.caco2.url.tw/caco/AC/images/EVENT_70off_WOMAN.gif","title":"  ","thumb":null,"url":"http://goo.gl/Io0uZO","enable":true,"sortnum":7},{"uid":"165c01c1-9894-411c-a34a-93903914f0d8","image":"http://www.caco2.url.tw/caco/AC/images/150427-EVENT.gif","title":" ","thumb":null,"url":"http://goo.gl/ekoxwm","enable":true,"sortnum":11},{"uid":"8335181b-9971-489f-bc5e-05e73e7cb430","image":"http://www.caco2.url.tw/caco/AC/images/150427-EVENT-bonus.gif","title":" ","thumb":null,"url":"http://goo.gl/XD1IEA","enable":true,"sortnum":12},{"uid":"70764ce4-ea7b-45f1-8521-71241f16b6e6","image":"http://www.caco2.url.tw/caco/AC/images/150424-EVENT_over.gif","title":" ","thumb":null,"url":"http://goo.gl/0TUpKF","enable":true,"sortnum":100}];
+            function getdata(data) {
+                var html = "";
+                for (var i = 0, max = data.length; i < max; i++) {
+                    html += "<a href=\"" + data[i].url + "\">";
+                    html += "<img src=\"" + data[i].image + "\">";
+                    html += "</a>";
+                }
+                $(".event>.inbox>.box").html(html);
+                setmCustomScrollbar();
+                $(".event>.inbox>.box img").load(function() {
+                    setAdjustHeight();
+                });
+                setAdjustHeight();
+            }
+            if (isLocal) {
+                getdata(data);
+            } else {
+                $.getJSON("../Common/supersizelist.ashx", function(data) {
+                    getdata(data);
+                });
+            }
+        })(); //load event data
+    })(); //event
+    (function() {
         initShoppingCart();
         initWishList();
     })(); //initializing
-    $(".menu").on("mouseenter mouseleave", "img[hover]", function() {
-        var $this = $(this),
-            src = $this.attr("src");
-        $this.attr("src", $this.attr("hover"));
-        $this.attr("hover", src);
-    }); //change menu image
-
-
-
-
-    $(".event").click(function() {
-        if ($(this).hasClass("close")) {
-            $(this).removeClass("close");
-        } else {
-            $(this).addClass("close");
-        }
-    });
 });

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<title></title>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="js/header.js"></script>
 </head>
 <body>
 
@@ -13,11 +11,23 @@
 
 
 
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" type="text/css" href="css/header.css">
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/header.js"></script>
 <div class="header">
     <div>
         <div class="left">
             <div class="logo">
-                <a class="divlink" href="/">logo</a>
+                <a class="divlink" href="/">
+                    logo
+                </a>
             </div>
         </div>
         <div class="center">
@@ -45,10 +55,14 @@
         <div class="right">
             <div class="up">
                 <div class="fb">
-                    <a class="divlink" href="https://goo.gl/IR5y3i" target="_blank">fb</a>
+                    <a class="divlink" href="https://goo.gl/IR5y3i" target="_blank">
+                        fb
+                    </a>
                 </div>
                 <div class="ig">
-                    <a class="divlink" href="https://goo.gl/TSSdHs" target="_blank">ig</a>
+                    <a class="divlink" href="https://goo.gl/TSSdHs" target="_blank">
+                        ig
+                    </a>
                 </div>
                 <form name="formSc" action="../Shop/itemlist.aspx" method="get" id="formSearch">
                     <input type="text" name="ctl00$edtSearch" id="edtSearch">
@@ -58,83 +72,159 @@
             <div class="down">
                 <div class="tel">
                     <div class="telbox">
-                        <div class="lab">營業時間</div>
+                        <div class="lab">
+                            營業時間
+                        </div>
                         <div class="box b1">
-                            <div>MON►SAT</div>
-                            <div>10:00►12:30&nbsp;&nbsp;&nbsp;13:30►19:00</div>
+                            <div>
+                                MON►SAT
+                            </div>
+                            <div>
+                                10:00►12:30&nbsp;&nbsp;&nbsp;13:30►19:00
+                            </div>
                         </div>
-                        <div class="lab">服務專線</div>
+                        <div class="lab">
+                            服務專線
+                        </div>
                         <div class="box b2">
-                            <div>(02)2929-8222</div>
+                            <div>
+                                (02)2929-8222
+                            </div>
                         </div>
-                        <div class="lab">聯絡信箱</div>
+                        <div class="lab">
+                            聯絡信箱
+                        </div>
                         <div class="box b3">
-                            <div>service@caco.com.tw</div>
+                            <div>
+                                service@caco.com.tw
+                            </div>
                         </div>
                         <div class="btn">
-                            <a class="divlink" href="http://goo.gl/MBp04e">線上客服</a>
+                            <a class="divlink" href="http://goo.gl/MBp04e">
+                                線上客服
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="usr">
                     <div class="usrbox">
-                        <div class="lab">SIGN IN</div>
-                        <div class="btn">
-                            <a class="divlink" href="../Common/login.aspx">登入/註冊</a>
+                        <div class="lab">
+                            SIGN IN
                         </div>
-                        <div class="sp">sp</div>
-                        <div class="lab">MY ORDERS</div>
                         <div class="btn">
-                            <a class="divlink" href="../Member/findorder.aspx">訂單查詢</a>
+                            <a class="divlink" href="../Common/login.aspx">
+                                登入/註冊
+                            </a>
                         </div>
-                        <div class="sp">sp</div>
-                        <div class="lab">EDIT ACCOUNT INFO</div>
+                        <div class="sp">
+                            sp
+                        </div>
+                        <div class="lab">
+                            MY ORDERS
+                        </div>
                         <div class="btn">
-                            <a class="divlink" href="../Member/useradmin.aspx">修改會員資料</a>
+                            <a class="divlink" href="../Member/findorder.aspx">
+                                訂單查詢
+                            </a>
+                        </div>
+                        <div class="sp">
+                            sp
+                        </div>
+                        <div class="lab">
+                            EDIT ACCOUNT INFO
+                        </div>
+                        <div class="btn">
+                            <a class="divlink" href="../Member/useradmin.aspx">
+                                修改會員資料
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="bag">
-                    <span>0</span>
+                    <span>
+                        0
+                    </span>
                     <div class="bagbox">
-                    	<table class="tablehead" border="0" cellpadding="4" cellspacing="1">
-                    		<thead>
-                    			<tr>
-                    				<td class="first">品名</td>
-                    				<td width="32" align="center">顏色</td>
-                    				<td width="42" align="center">尺寸</td>
-                    				<td width="42" align="center">金額</td>
-                    				<td width="32" align="center">數量</td>
-                    			</tr>
-                    		</thead>
-                    	</table>
-                    	<table class="tablebody" border="0" cellpadding="0" cellspacing="0">
-                    		<tbody><tr><td>&nbsp;</td></tr></tbody>
-                    	</table>
-						<div class="totalmoney">總金額<span>0</span>元</div>
-						<div class="btn">
-                            <a class="divlink" href="../Shop/cartList.aspx">確定結帳</a>
+                        <table class="tablehead" border="0" cellpadding="4" cellspacing="1">
+                            <thead>
+                                <tr>
+                                    <td class="first">
+                                        品名
+                                    </td>
+                                    <td width="32" align="center">
+                                        顏色
+                                    </td>
+                                    <td width="42" align="center">
+                                        尺寸
+                                    </td>
+                                    <td width="42" align="center">
+                                        金額
+                                    </td>
+                                    <td width="32" align="center">
+                                        數量
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tablebody" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="totalmoney">
+                            總金額
+                            <span>
+                                0
+                            </span>
+                            元
+                        </div>
+                        <div class="btn">
+                            <a class="divlink" href="../Shop/cartList.aspx">
+                                確定結帳
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="fav">
-                    <span>0</span>
+                    <span>
+                        0
+                    </span>
                     <div class="favbox">
-                    	<table class="tablehead" border="0" cellpadding="4" cellspacing="1">
-                    		<thead>
-                    			<tr>
-                    				<td class="first">品名</td>
-                    				<td width="32" align="center">顏色</td>
-                    				<td width="42" align="center">尺寸</td>
-                    				<td width="42" align="center">金額</td>
-                    			</tr>
-                    		</thead>
-                    	</table>
-                    	<table class="tablebody" border="0" cellpadding="0" cellspacing="0">
-                    		<tbody><tr><td>&nbsp;</td></tr></tbody>
-                    	</table>
-						<div class="btn">
-                            <a class="divlink" href="../Shop/itemFav.aspx">檢視收藏</a>
+                        <table class="tablehead" border="0" cellpadding="4" cellspacing="1">
+                            <thead>
+                                <tr>
+                                    <td class="first">
+                                        品名
+                                    </td>
+                                    <td width="32" align="center">
+                                        顏色
+                                    </td>
+                                    <td width="42" align="center">
+                                        尺寸
+                                    </td>
+                                    <td width="42" align="center">
+                                        金額
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tablebody" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn">
+                            <a class="divlink" href="../Shop/itemFav.aspx">
+                                檢視收藏
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -142,10 +232,22 @@
         </div>
     </div>
 </div>
+<div class="overlayer">
+    &nbsp;
+</div>
 <div class="event">
-    <div class="open">&nbsp;</div>
+    <div class="open">
+        &nbsp;
+    </div>
     <div class="inbox">
-        xx
+        <div class="lab">
+            &nbsp;
+        </div>
+        <div class="box">
+            <div>
+                &nbsp;  
+            </div>
+        </div>
     </div>
 </div>
 
@@ -153,6 +255,31 @@
 
 
 
+
+
+
+
+<div id="container">
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+
+</div>
 	
 </body>
 </html>
