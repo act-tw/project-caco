@@ -1,7 +1,6 @@
 .login {
     width: 880px;
     height: 619px;
-    background-image: url(../images/login.jpg);
     margin: 0 auto;
     padding-left: 123px;
     padding-right: 123px;
@@ -17,7 +16,7 @@
     float: left;
     width: 423px;
     height: 468px;
-    border-right: 1px solid gray;
+    border-right: 1px solid #dcdcdc;
 }
 
 .login>.left>.slogan {
@@ -62,16 +61,93 @@
 }
 
 .login>.left>.columns>span.remember {
-	display: inline;
+    display: inline;
 }
 
 .login>.left>.columns>span.sp {
-	  margin: 0 8px;
+    margin: 0 8px;
+}
+
+.login>.left>.columns.btn {
+    margin-top: 35px;
+}
+
+.login>.left>.columns.btn input {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 287px;
+    height: 25px;
+}
+
+.login>.left>.columns.btn.fb {
+    margin-top: 8px;
 }
 
 .login>.right {
-    background-color: rgba(0, 0, 0, 0.25);
     float: left;
     width: 456px;
     height: 468px;
+}
+
+.login>.right>.slogan {
+    margin-top: 41px;
+    margin-left: 55px;
+}
+
+.login>.right>.slogan>.cn {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.login>.right>.slogan>.en {
+    font-size: 26px;
+    margin-left: 13px;
+}
+
+.login>.right>.columns {
+    margin-left: 59px;
+    margin-top: 12px;
+}
+
+.login>.right>.columns.first {
+    margin-top: 28px;
+}
+
+.login>.right>.columns>span {
+    font-size: 14px;
+    width: 68px;
+    display: inline-block;
+}
+
+.login>.right>.columns input[type=text],
+.login>.right>.columns input[type=password] {
+    height: 19px;
+    width: 211px;
+}
+
+.login>.right>.columns.second {
+    margin-top: 34px;
+}
+
+.login>.right>.columns.btn {
+    margin-top: 30px;
+}
+
+.login>.right>.columns.btn input {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 287px;
+    height: 25px;
+}
+
+.login>.right>.columns>ul {
+    margin-left: -25px;
+    margin-top: -5px;
+}
+
+.login>.right>.columns>ul>li {
+    font-size: 13px;
+    margin-bottom: 3px;
 }
