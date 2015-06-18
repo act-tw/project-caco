@@ -2,8 +2,6 @@
     width: 880px;
     height: 619px;
     margin: 0 auto;
-    padding-left: 123px;
-    padding-right: 123px;
     padding-top: 117px;
     padding-bottom: 151px;
 }
@@ -66,6 +64,11 @@
 
 .login>.left>.columns>span.sp {
     margin: 0 8px;
+}
+
+.login>.left>.columns>span.remember>a {
+	text-decoration: none;
+	color: black;
 }
 
 .login>.left>.columns.btn {

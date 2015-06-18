@@ -29,7 +29,7 @@ body {
 }
 
 .overlayer.alert {
-    z-index: 107;
+    z-index: 117;
 }
 
 .overlayer.alert>div {
@@ -218,13 +218,3 @@ body {
     margin-top: 31px;
     margin-right: 28px;
 }
-/* test */
-/*
-body {
-	background-color: pink;
-	
-}
-#container {
-    height: 2000px;
-}
-*/

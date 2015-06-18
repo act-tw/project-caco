@@ -1,0 +1,52 @@
+<style type="text/css">
+        .login { margin: 80px auto 80px auto; }
+            .login, .login td { color: #000; font-family: "Times New Roman", "微軟正黑體", "新細明體", Times, serif; font-size: 15px; line-height: 140%; vertical-align: top; font-weight: bold; }
+                .login .title { font-size: 16px; border-bottom: 1px; border-bottom-style: solid; border-bottom-color: #8c8c8c; padding-bottom: 5px; margin-bottom: 10px; }
+                .login p { margin: 5px 0; }
+                .login a { color: #000; text-decoration: none; }
+                    .login a:hover { /*font-weight: bold;*/ }
+                .login ul { list-style-type: disc; margin: 0; padding: 0; }
+
+                    .login ul li { margin: 5px 0px 5px 20px; }
+
+                .login img { border: none 0px; }
+        .center { margin: 0px auto; }
+        #ctl00_ContentPlaceHolder1_uc_login_btnLogin { background-color: #000; color: #fff; border: 0; text-decoration: none; width: 130px; line-height: 33px; height: 33px; text-align: center; font-size: 14px; vertical-align: middle; letter-spacing: 0; padding: 0; }
+        #ctl00_ContentPlaceHolder1_uc_login_edtUserid,
+        #ctl00_ContentPlaceHolder1_uc_login_edtPwd { width: 250px; }
+        .login a.regbtn { background-color: #000; color: #fff; text-decoration: none; /*width: 130px;*/ text-align: center; font-size: 14px; /*height: 30px;
+            line-height:30px;*/ padding: 8px 30px 8px 30px; line-height: 33px; vertical-align: top; }
+    </style>
+<table class="login">
+    <tbody>
+        <tr>
+            <td style="width: 350px">
+            <div style="width: 330px">
+            <p class="title">會員登入</p>
+            <p>電子郵件                             <br />
+            [edtUserid]</p>
+            <p>密碼                             <br />
+            [edtPwd]</p>
+            <p style="font-size: 12px">&nbsp;[chkMember]&nbsp;<label for="ctl00_ContentPlaceHolder1_uc_login_chkRememberMe"> 記住帳號</label>                             &nbsp;|&nbsp;&nbsp; <a target="_top" href="../Common/MemberPasswordRecovery.aspx?[st]">忘記密碼</a></p>
+            <p>[loginButton]</p>
+            <script type="text/javascript">
+                            $('#ctl00_ContentPlaceHolder1_uc_login_btnLogin').attr('value', '登入 >> ');
+                        </script></div>
+            </td>
+            <td style="width: 450px">
+            <div style="text-align: left; width: 430px">
+            <p class="title">尚未註冊為caco會員?</p>
+            <ul>
+                <li>如果您是第一次購物請加入會員</li>
+                <li>若您不是會員將無法進行購物</li>
+                <li>會員將可享有優惠</li>
+                <li>若您尚未加入會員，歡迎以FB帳號直接登入加入會員</li>
+                <li>舊會員則請勿再以FB帳號登入會員，原帳號購物金恕無法共用</li>
+            </ul>
+            <br />
+            <div><a class="regbtn" target="_top" href="../Common/CreateMember.aspx?ReturnUrl=%2fShop%2fcartList.aspx&amp;[st]">立即註冊&nbsp;&gt;&gt;&nbsp;</a>                             [FBloginImageButton]</div>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

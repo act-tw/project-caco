@@ -1,0 +1,294 @@
+<link rel="stylesheet" type="text/css" media="all" href="http://meyerweb.com/eric/tools/css/reset/reset.css" />   <script>
+    var times = 5000;
+    var adrotator = [["http://www.caco2.url.tw/caco/TOP/BNR/01.jpg", "#1"], ["http://www.caco2.url.tw/caco/TOP/BNR/02.jpg", "#2"], ["http://www.caco2.url.tw/caco/TOP/BNR/03.jpg", "#3"], ["http://www.caco2.url.tw/caco/TOP/BNR/04.jpg", "#4"], ["http://www.caco2.url.tw/caco/TOP/BNR/05.jpg", "#5"]]; //default
+    $.ajax({
+        url: "../Common/CustomHtml.ashx?code=CacoAdRotator",
+        async: false,
+        cache: false,
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            adrotator = data;
+        }
+    });
+</script>   <style type="text/css">
+    #container {
+        width: 1615px;
+    }
+    .dvBlock, .main {
+        z-index: 2;
+    }
+    .outbox
+    {
+        width: 1615px;
+        height: 875px;
+        overflow: hidden;
+        position: relative;
+    }
+    .inbox
+    {
+        position: relative;
+        left: 0;
+    }
+    .leftflag, .rightflag
+    {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-image: url(http://www.caco2.url.tw/caco/TOP/JS/ARROW_NI_LEFT.png);
+        z-index: 1;
+        cursor: pointer;
+    }
+    .rightflag {
+        background-image: url(http://www.caco2.url.tw/caco/TOP/JS/ARROW_NI_RIGHT.png);
+    }
+    .leftflag:hover {
+        background-image: url(http://www.caco2.url.tw/caco/TOP/JS/ARROW_NI_LEFT_B.png);        
+    }
+    .rightflag:hover {
+        background-image: url(http://www.caco2.url.tw/caco/TOP/JS/ARROW_NI_RIGHT_B.png);        
+    }
+    .numDiv {
+        position: absolute;
+        margin-top: -66px;
+        right: 53px;
+        font-size: 20px;
+        font-family: arial;
+        width: 87px;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+    form{
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        display: inline;
+    }
+</style>  <script>
+    $(function () {
+        var iframeTagName = "iframe",
+            imgTagName = "img",
+            pTagName = "p",
+            tdTagName = "td",
+            trTagName = "tr",
+            containerIdName = "#container",
+            contentIdName = "#content",
+            areaClassName = ".area",
+            eventsClassName = ".events",
+            header_contentClassName = ".header_content",
+            maskClassName = ".mask",
+            outboxClassName = ".outbox",
+            inboxClassName = ".inbox",
+            rightflagClassName = ".rightflag",
+            leftflagClassName = ".leftflag",
+            numDivClassName = ".numDiv",
+            animatedActionName = ":animated",
+            visibleActionName = ":visible",
+            heightCssName = "height",
+            leftCssName = "left",
+            marginCssName = "margin",
+            marginLeftCssName = "margin-left",
+            marginTopCssName = "margin-top",
+            topCssName = "top",
+            widthCssName = "width",
+            slowSpeedName = "slow",
+            autoUnitName = "auto",
+            pxUnitName = "px",
+            slash="/",
+            empty = "",
+            space = " ",
+            zero = 0,
+            one = 1,
+            two = 2,
+            three = 3,
+            four = 4,
+            five = 5,
+            six = 6,
+            ten = 10,
+            hundred = 100,
+            thousand = 1000,
+            template = "<a href=\"{0}\"><img src=\"{1}\"></a>",
+            params0 = /\{0}/g,
+            params1 = /\{1}/g,
+            $area = $(areaClassName),
+            $container = $(containerIdName),
+            $content = $(contentIdName),
+            $header_content = $(header_contentClassName),
+            $inbox = $(inboxClassName),
+            $leftflag = $(leftflagClassName),
+            $mask = $(maskClassName),
+            $outbox = $(outboxClassName),
+            $rightflag = $(rightflagClassName),
+            $numDiv = $(numDivClassName),
+            $window = $(window),
+            max = adrotator.length,
+            html = empty,
+            sid1 = null,
+            sid2 = null,
+            numDiv="<div class=\"numDiv\"></div>",
+            getCurrentNumber=function () {
+                var left = Math.abs(parseInt($inbox.css(leftCssName),ten))+$outbox.width();
+                if (left>=$inbox.width()) {
+                    left = $outbox.width();
+                }
+                var current = Math.round(left/$outbox.width());
+                $numDiv.text(current + slash + adrotator.length);
+            },
+            autorun=function () {
+                sid1 = setTimeout(function () {
+                    var me = arguments.callee;
+                    if (!$inbox.is(animatedActionName)) {
+                        var cssObject = {},
+                            maxWidth = $inbox.width(),
+                            left = parseInt($inbox.css(leftCssName).replace(pxUnitName, empty), ten);
+                        if (maxWidth - $outbox.width() < Math.abs(left - $outbox.width())) {
+                            left = zero;
+                            cssObject[leftCssName] = left;
+                            $inbox.css(cssObject);
+                        }
+                        cssObject[leftCssName] = left - $outbox.width();
+                        $inbox.stop().animate(cssObject, slowSpeedName,getCurrentNumber);
+                    }
+                    sid2 = setTimeout(function () {
+                        me();
+                    }, times);
+                }, times);
+            };
+        for (var i = zero; i < max; i++) {
+            html += template.replace(params0, adrotator[i][one]).replace(params1, adrotator[i][zero]);
+            if (i === max - one) {
+                html += template.replace(params0, adrotator[zero][one]).replace(params1, adrotator[zero][zero]);
+            }
+        }
+        $inbox.width($outbox.width() * (max + one)).html(html);
+        $rightflag.click(function () {
+            if (!$inbox.is(animatedActionName)) {
+                var cssObject = {},
+                    left = parseInt($inbox.css(leftCssName).replace(pxUnitName, empty), ten),
+                    maxwidth = $inbox.width(),
+                    newleft = left - $outbox.width();
+                if (-maxwidth >= newleft) {
+                    left = zero;
+                    cssObject[leftCssName] = left;
+                    $inbox.css(cssObject);
+                }
+                cssObject[leftCssName] = left - $outbox.width();
+                $inbox.animate(cssObject, slowSpeedName,getCurrentNumber);
+            }
+        });
+        $leftflag.click(function () {
+            if (!$inbox.is(animatedActionName)) {
+                var cssObject = {},
+                    left = parseInt($inbox.css(leftCssName).replace(pxUnitName, empty), ten),
+                    maxwidth = $inbox.width(),
+                    newleft = left + $outbox.width();
+                if (zero < newleft) {
+                    left = -maxwidth + $outbox.width();
+                    cssObject[leftCssName] = left;
+                    $inbox.css(cssObject);
+                }
+                cssObject[leftCssName] = left + $outbox.width();
+                $inbox.animate(cssObject, slowSpeedName,getCurrentNumber);
+            }
+        });
+        $rightflag.add($leftflag).mouseenter(function() {
+            if (sid1!==null) {
+                clearTimeout(sid1);
+            }
+            if (sid2!==null) {
+                clearTimeout(sid2);
+            }
+        }).mouseleave(function() {
+            autorun();
+        });
+        autorun();
+        $content.next(pTagName).remove();
+        $outbox.append(numDiv);
+        $numDiv = $(numDivClassName);
+        $numDiv.text(one + slash + adrotator.length);
+        $window.resize(function () {
+            var width = $(window).width(),
+                maxWidth = thousand + six * hundred + ten + five,
+                cssObject = {};
+            $outbox = $(outboxClassName);
+            $numDiv.text(one+ slash + adrotator.length);
+            if (width < maxWidth) {
+                $inbox.find(imgTagName).width(width);
+                cssObject[leftCssName] = zero;
+                $inbox.width($inbox.find(imgTagName).length * width).css(cssObject);
+                cssObject = {};
+                cssObject[heightCssName] = autoUnitName;
+                $outbox.css(cssObject).width(width);
+                cssObject = {};
+                cssObject[widthCssName] = width;
+                cssObject[marginCssName] = zero;
+                $container.css(cssObject);
+                cssObject = {};
+                cssObject[marginTopCssName] = $outbox.height() - (three * ten + five) - (three * ten + six + three);
+                cssObject[marginLeftCssName] = width - (three * ten + five) - (one * hundred + three * ten + five);
+                $leftflag.css(cssObject);
+                cssObject[marginLeftCssName] = width - (three * ten + five) - (two * ten + three);
+                $rightflag.css(cssObject);
+                $header_content.width(width);
+            } else {
+                $inbox.find(imgTagName).width(maxWidth);
+                cssObject[leftCssName] = zero;
+                $inbox.width($inbox.find(imgTagName).length * maxWidth).css(cssObject);
+                cssObject = {};
+                cssObject[heightCssName] = autoUnitName;
+                $outbox.css(cssObject).width(maxWidth);
+                cssObject = {};
+                cssObject[widthCssName] = maxWidth;
+                cssObject[marginCssName] = zero + space + autoUnitName;
+                $container.css(cssObject);
+                cssObject = {};
+                cssObject[marginTopCssName] = $outbox.height() - (three * ten + five) - (three * ten + six + three);
+                cssObject[marginLeftCssName] = maxWidth- (three * ten + five) - (one * hundred + three * ten + five);
+                $leftflag.css(cssObject);
+                cssObject[marginLeftCssName] = maxWidth - (three * ten + five) - (two * ten + three);
+                $rightflag.css(cssObject);
+                $header_content.width(maxWidth);
+            }
+            $container = $(containerIdName);
+            if ($mask.is(visibleActionName)) {
+                var cssObject = {};
+                $mask.width($container.width());
+                $mask.height($container.height());
+                cssObject[topCssName] = $container.offset().top;
+                cssObject[leftCssName] = $container.offset().left;
+                $mask.css(cssObject);
+            }
+            if ($mask.is(visibleActionName)) {
+                var cssObject = {};
+                $outbox = $(outboxClassName);
+                cssObject[heightCssName] = $outbox.height();
+                $area.css(cssObject);
+                $area.find(iframeTagName).height($outbox.height());
+                $area.find(iframeTagName).contents().find(trTagName).last().height($outbox.height() - (hundred + ten + two));
+                $area.find(iframeTagName).contents().find(trTagName).last().children(tdTagName).height($outbox.height() - (hundred + ten + two));
+                $area.find(iframeTagName).contents().find(eventsClassName).height($outbox.height() - (hundred + ten + two));
+            }
+        }).resize();
+        $inbox.find(imgTagName).first().load(function () {
+            $window.resize();
+        });
+    });
+</script>
+<div class="outbox">
+<div class="leftflag">&nbsp;</div>
+<div class="rightflag">&nbsp;</div>
+<div class="inbox">&nbsp;</div>
+</div>
+<script src="../Shop/CustomUc/C12Coconut201212/201408/static/js/index.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="../Shop/CustomUc/C12Coconut201212/201408/static/css/index.css" />
+<div id="wrapper">
+<div id="subTheme1" class="bannerSlider">
+<div class="photoBox"><span class="back"><img alt="" src="http://www.caco2.url.tw/caco/TOP/JS/ARROW_LEFT.png" /></span>
+<ul>
+    <li><img alt="" src="../Shop/CustomUc/C12Coconut201212/201408/static/images/index/Banner1.jpg" /></li>
+    <li><img alt="" src="../Shop/CustomUc/C12Coconut201212/201408/static/images/index/Banner2.jpg" /></li>
+    <li><img alt="" src="../Shop/CustomUc/C12Coconut201212/201408/static/images/index/Banner3.jpg" /></li>
+</ul>
+<span class="next"><img alt="" src="http://www.caco2.url.tw/caco/TOP/JS/ARROW_RIGHT.png" /></span></div>
+</div>
+</div>

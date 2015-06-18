@@ -1,0 +1,46 @@
+<style type="text/css">
+    .footer { background-color: black;}
+    .footer > div { margin: 0 auto;overflow: hidden;max-width: 1085px;min-width: 800px;}
+    .footer > div > a > div { float: left;height: 49px;margin-right: 24px;}
+    .footer > div > a > .service{width: 228px;background-image: url(http://www.caco.url.tw/caco/images/down_menu_c04.png);}
+    .footer > div > a > .faqs{width: 114px;background-image: url(http://www.caco.url.tw/caco/images/down_menu_05.png);}
+    .footer > div > a > .faqs:hover{background-image: url(http://www.caco.url.tw/caco/images/down_menu_c05.png);}
+    .footer > div > a > .aboutus{width: 114px;background-image: url(http://www.caco.url.tw/caco/images/down_menu_06.png);}
+    .footer > div > a > .aboutus:hover{background-image: url(http://www.caco.url.tw/caco/images/down_menu_c06.png);}
+    .footer > div > a > .storelocator{width: 113px;background-image: url(http://www.caco.url.tw/caco/images/down_menu_07.png);}
+    .footer > div > a > .storelocator:hover{background-image: url(http://www.caco.url.tw/caco/images/down_menu_c07.png);}
+    .footer > div > a > .privacynotice{width: 114px;background-image: url(http://www.caco.url.tw/caco/images/down_menu_08.png);}
+    .footer > div > a > .privacynotice:hover{background-image: url(http://www.caco.url.tw/caco/images/down_menu_c08.png);}
+    .footer > div > a > .cooperation{width: 114px;background-image: url(http://www.caco.url.tw/caco/images/down_menu_09.png);}
+    .footer > div > a > .cooperation:hover{background-image: url(http://www.caco.url.tw/caco/images/down_menu_c09.png);}
+    .footer > div > a > .recruitment{width: 114px;background-image: url(http://www.caco.url.tw/caco/images/down_menu_10.png);}
+    .footer > div > a > .recruitment:hover{background-image: url(http://www.caco.url.tw/caco/images/down_menu_c10.png);}
+    .footer > .cacocopyright {width: 326px;height: 37px; background-image: url(http://www.caco.url.tw/caco/images/down_menu_12.png);}
+</style> <script>
+    $(function() {
+        if ($("body").height() < $(window).height()) {
+            setTimeout(function() {
+                var minHeight = $(window).height() - ($("#header").height() + $(".footer").height());
+                $("#container").css({ "min-height": minHeight });
+            }, 250);
+        }
+    });
+</script>
+<div class="footer">
+<div><a>
+<div class="service">&nbsp;</div>
+</a>         <a href="../Common/CustomPage.aspx?no=1">
+<div class="faqs">&nbsp;</div>
+</a>         <a href="../Common/CustomPage.aspx?no=6">
+<div class="aboutus">&nbsp;</div>
+</a>         <a href="../Common/CustomPage.aspx?no=11">
+<div class="storelocator">&nbsp;</div>
+</a>         <a href="../Common/CustomPage.aspx?no=7">
+<div class="privacynotice">&nbsp;</div>
+</a>         <a href="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&amp;j=6260436b3c46402040583a1d1d1d1d5f2443a363189j50&amp;jobsource=n104bank1">
+<div class="cooperation">&nbsp;</div>
+</a>         <a href="../Common/CustomPage.aspx?no=8">
+<div class="recruitment">&nbsp;</div>
+</a></div>
+<div class="cacocopyright">&nbsp;</div>
+</div>
