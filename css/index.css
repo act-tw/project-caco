@@ -1,10 +1,26 @@
+body #container {
+    width: auto !important;
+}
+
+#container {
+    max-width: 1255px;
+    min-width: 1024px;
+    margin: 0 auto;
+}
+
+.index {
+    max-width: 1255px;
+    min-width: 1024px;
+    width: auto;
+}
+
 .index>.up {
     max-width: 1255px;
     min-width: 1024px;
     max-height: 585px;
     overflow: hidden;
     position: relative;
-    margin: 0 auto;
+    margin: 16px auto 0 auto;
 }
 
 .index>.up>div {
@@ -35,6 +51,7 @@
 .index>.down {
     position: relative;
     margin: 0 auto;
+    margin-bottom: 16px;
 }
 
 .index>.down>div {
