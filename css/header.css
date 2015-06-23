@@ -548,3 +548,39 @@ body {
     margin-bottom: 41px;
     width: 150px;
 }
+/* itemlist */
+
+#litTop {
+    margin-top: 14px;
+}
+
+#litTop>.outbox {
+    overflow: hidden;
+    height: 0;
+    margin-bottom: 14px;
+      position: relative;
+}
+
+#litTop>.outbox>.inbox {
+    position: relative;
+}
+
+#litTop>.outbox>ul {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#litTop>.outbox>ul>li {
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_11.png);
+    width: 18px;
+    height: 18px;
+    list-style: none;
+    float: left;
+    cursor: pointer;
+    margin-right: 18px;
+}
+
+#litTop>.outbox>ul>li.active {
+    background-image: url(http://www.caco.url.tw/caco/2015CACO/15_caco_001_11_c.png);
+}

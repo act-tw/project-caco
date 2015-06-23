@@ -16,7 +16,7 @@ function initShoppingCart() {
                     html += "<td width=\"44\" align=\"center\">" + cartlist[i].Size + "</td>";
                     html += "<td width=\"44\" align=\"center\">" + cartlist[i].Price + "</td>";
                     html += "<td width=\"34\" class=\"end\" align=\"center\">" + cartlist[i].Num + "</td>";
-                    html += "</tr>"
+                    html += "</tr>";
                     count += cartlist[i].Num;
                     total += cartlist[i].Num * cartlist[i].Price;
                 }
@@ -53,7 +53,7 @@ function initWishList() {
                     html += "<td width=\"34\" align=\"center\"><img title=\"" + wishlist[i].Color + "\" src=\"" + wishlist[i].ColorPhotoPath + "\"></td>";
                     html += "<td width=\"44\" align=\"center\">" + wishlist[i].Size + "</td>";
                     html += "<td width=\"44\" align=\"center\">" + wishlist[i].Price + "</td>";
-                    html += "</tr>"
+                    html += "</tr>";
                     count += 1;
                 }
             }
@@ -116,7 +116,7 @@ $(function() {
                     enable: false
                 }
             });
-            $(".event>.inbox").removeAttr("style");            
+            $(".event>.inbox").removeAttr("style");
         }
         $(window).resize(function() {
             setAdjustHeight();
@@ -160,4 +160,121 @@ $(function() {
         initShoppingCart();
         initWishList();
     })(); //initializing
+});
+$(function () {
+    function queryString(name) {
+        var allVars = window.location.search.substring(1);
+        var vars = allVars.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var key = vars[i].split("=");
+            if (key[0].toUpperCase() == name.toUpperCase()) return key[1];
+        }
+        return "";
+    }
+    function runable(data) {
+        if (data !== undefined && data !== null && data.length > 0) {
+            (function (data) {
+                function build(data) {
+                    var html = "";
+                    html += "<a href=\"" + data[1] + "\">";
+                    html += "<img src=\"" + data[0] + "\">";
+                    html += "</a>";
+                    return html;
+                }
+                var html = "",
+                    navi = "";
+                html += "<div class=\"outbox\">";
+                html += "<div class=\"inbox\">";
+                for (var i = 0, max = data.length; i < max; i++) {
+                    html += build(data[i]);
+                    if (i >= max - 1 && max >1) {
+                        html += build(data[0]);
+                    }
+                    navi += "<li";
+                    if (i === 0) {
+                        navi += " class=\"active\"";
+                    }
+                    navi += "></li>";
+                }
+                html += "</div>";
+                if (data.length > 1) {
+                    html += "<ul>" + navi + "</ul>";
+                }
+                html += "</div>";
+                $("#litTop").prepend(html);
+                var n = 0;
+                $("#litTop>.outbox>.inbox>a>img").load(function () {
+                    n++;
+                    if (n >= $("#litTop>.outbox>.inbox>a>img").length) {
+                        loadAllImageCompleted($(this).width(), $(this).height(), n);
+                    }
+                });
+                function loadAllImageCompleted(width, height, count) {
+                    $("#litTop>.outbox").width(width).height(height);
+                    $("#litTop>.outbox>.inbox").width(width * count);
+                    var sid;
+                    function next() {
+                        $("#litTop>.outbox>.inbox").animate({ left: "-=" + width }, function () {
+                            var at = (parseInt($(this).css("left"), 10) / -width) + 1;
+                            if (at >= count) {
+                                $(this).css("left", 0);
+                            }
+                            showNavi(parseInt($(this).css("left"), 10) / -width);
+                        });
+                    }
+                    function start() {
+                        sid = setInterval(next, 3000);
+                    }
+                    function showNavi(index) {
+                        $("#litTop>.outbox>ul>li.active").removeClass();
+                        $("#litTop>.outbox>ul>li").eq(index).addClass("active");
+                    }
+                    if (data.length > 1) {
+                        $("#litTop>.outbox").mouseenter(function () {
+                            if (sid) {
+                                clearInterval(sid);
+                            }
+                        }).mouseleave(function () {
+                            start();
+                        });
+                        $("#litTop>.outbox>ul>li").click(function () {
+                            var index = $(this).index();
+                            $("#litTop>.outbox>.inbox").animate({ left: -index * width }, function () {
+                                showNavi(index);
+                            });
+                        });
+                        start();
+                    }
+                }
+            })(data); //generate
+        }
+    }
+    if (/itemList.aspx/i.test(location.href)) {
+        $.getJSON("../common/ajax/menucmd.ashx", function (data) {
+            function findP(items, p, l) {
+                for (var i = 0, max = items.length; i < max; i++) {
+                    if (items[i].Idno.toString() === p) {
+                        return p;
+                    } else {
+                        var out = findP(items[i].List, p, l + 1);
+                        if (out && l===0) {
+                            return items[i].Idno.toString();
+                        }
+                    }
+                }
+                return false;
+            }
+            var m = queryString("m");
+            var p = queryString("p");
+            var item = $.grep(data, function(a) {
+                return a.Idno.toString() === m;
+            })[0];
+            var subP = findP(item.SubClass, p, 0);
+            if (p !== "") {
+                $.getJSON("../Shop/CustomUc/C12Coconut201212/201506/data/data.ashx", { m: m, p: subP }, function(data) {
+                    runable(data);
+                });
+            }
+        });
+    }
 });
