@@ -19,7 +19,7 @@ body {
 
 .header {
     height: 92px;
-    background-color: #ffd900;
+    background-color: #f5d800;
     position: fixed;
     width: 100%;
     z-index: 111;
@@ -110,16 +110,22 @@ body {
     background-position: center center;
     margin-top: 12px;
     margin-right: 8px;
+    border-left: 0;
 }
 
 #edtSearch {
     border: 2px solid white;
     background-color: transparent;
-    width: 101px;
+    width: 80px;
     height: 16px;
     position: absolute;
     top: 12px;
-    right: 119px;
+    right: 117px;
+    border-right: 0;
+}
+
+.header>div>.right>.down>div {
+      margin-left: 9px;
 }
 
 .header>div>.right>.down>.tel {
@@ -189,7 +195,7 @@ body {
 
 .header>div>.right>.down>.tel>.telbox>.btn {
     width: 159px;
-    background-color: #ffd900;
+    background-color: #f5d800;
     margin: 6px 6px;
     height: 28px;
 }
@@ -226,7 +232,7 @@ body {
     height: 189px;
     background-color: white;
     margin-top: 45px;
-    margin-left: -65px;
+    margin-left: -67px;
     position: absolute;
 }
 
@@ -240,7 +246,7 @@ body {
 
 .header>div>.right>.down>.usr>.usrbox>.btn {
     width: 166px;
-    background-color: #ffd900;
+    background-color: #f5d800;
     margin: 4px 8px;
     height: 28px;
 }
@@ -349,7 +355,7 @@ body {
 
 .header>div>.right>.down>.bag>.bagbox>.btn {
     width: 120px;
-    background-color: #ffd900;
+    background-color: #f5d800;
     margin: 11px 296px;
     height: 28px;
 }
@@ -451,7 +457,7 @@ body {
 
 .header>div>.right>.down>.fav>.favbox>.btn {
     width: 120px;
-    background-color: #ffd900;
+    background-color: #f5d800;
     margin: 11px 296px;
     height: 28px;
 }
